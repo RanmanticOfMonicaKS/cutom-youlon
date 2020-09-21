@@ -1,3 +1,12 @@
+/*
+***
+** =============================   WEB ================
+**  先隐藏 */
+
+.web {
+  display: none;
+}
+
 /* 顶部欢迎条 */
 .welcomeBar {
   height: 30px;
@@ -316,10 +325,36 @@ li.newRecommend-item>.yl-button {
   font-size: 12px;
 }
 
+.latestBulletin span.active {
+  color: #F16134
+}
+
 .news>i {
   margin-right: 8px;
 }
 
+/* 右侧购物流程 */
+.shopping-process .content .step {
+  position: relative;
+  font-size: 20px;
+  margin-left: 80px;
+  padding-top: 30px;
+  padding-bottom: 35px;
+  color: #777;
+  border-bottom: 1px solid #eee;
+}
+
+.shopping-process .content .step>img {
+  position: relative;
+  z-index: 3;
+  width: 30px;
+  height: 26px;
+  margin-top: 15px;
+  text-align: center;
+  border: 1px dotted #f36234;
+  border-radius: 50%;
+  background: #fff;
+}
 
 /* 底部广告部分 */
 .yl-adv {
