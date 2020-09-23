@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="./css/yl-common.css">
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/login.css">
   <!--[if lte IE 9]>
         <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -25,26 +26,29 @@
   <title>游龙网</title>
 </head>
 
-<body>
-  <div class="web">
+<body style="height: 100%;">
+  <div class="web clearfix" style="height:100%;">
     <!-- 头部欢迎条 -->
     <header class="topMenu">
       <div class="welcomeBar " @click="$alert.methods.success({content:'函数式',during:3})">
         <div class="heart">
           <!-- 左侧欢迎语 -->
-          <div class="welcomeTitle fl col-lg-6 hide-xs ">
+          <div class="welcomeTitle fl col-lg-6 hide-xs col-sm-6">
             <span>欢迎来到<strong>游龙网</strong>，全球华人都在用的充值平台</span>
           </div>
           <!-- 右侧功能键 -->
-          <div class="tipsAndInfo fr col-lg-6 col-xs-10">
-            <span>收藏本站</span>
-            <span>
-              <svg-icon class-name="phone" data-icon-name="phone" />
+          <div class="tipsAndInfo fr col-lg-6 col-xs-6 col-sm-6">
+            <span class="click" onclick="_addFavorite('www.youlon.com','游龙网-全球华人都在用的充值平台')">收藏本站</span>
+            <span class="click appQrCode">
+              <div class="qrCode">
+                <img src="./img/top-app-code.png" alt="海外充值app游龙网">
+              </div>
+              <div class="fa fa-mobile"></div>
               APP
             </span>
-            <span class="login">登录 </span>
-            <span class="register">注册 </span>
-            <span>个人中心</span>
+            <span class="click login-btn">登录 </span>
+            <span class="register click">注册 </span>
+            <span class="click">个人中心</span>
             <select name="" id="">
               <option value="American" label="美元"></option>
               <option value="Canadian" label="加币"></option>
@@ -462,8 +466,58 @@
       </div>
       <p class="introduce">游龙网是全球最大的海外华人充值平台,提供手游游戏充值、直播平台充值、苹果app充值、游戏充值点卡,Q币. 支持Paypal、Visa、MasterCard信用卡付款</p>
     </div>
+    <!-- 登录拟态页面 -->
+    <div class="login">
+      <div class="login-content">
+        <img class="close click" src="./img/close-icon.png" />
+        <div class="login-type">
+          <span class="username-login click active" data-login="1">用户名登录</span>
+          <span class="phone-login click" data-login="2">手机登录</span>
+        </div>
+        <!-- 用户名登录 -->
+        <ul class="login-layout-username">
+          <li class="idOrEmail">
+            <img class="idOrEmail-icon" src="./img/user.png" />
+            <input type="text" placeholder="邮箱/账号">
+          </li>
+          <li class="pws">
+            <img class="pws-icon" src="./img/tuceng-copy.png" />
+            <input type="password" placeholder="密码">
+          </li>
+          <li class="about clearfix">
+            <span class="click fl">免费注册</span>
+            <span class="click fr">忘记密码</span>
+          </li>
+          <li class="login-Submit">登录</li>
+        </ul>
+        <!-- 手机号登录 -->
+        <ul class="login-layout-phone" style="display: none;">
+          <li class="phoneNumber">
+            <span class="prefix-number">
+              <select name="prefix" id="">
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+              </select>
+            </span>
+            <span class="phone-number">
+              <input type="text" placeholder="输入手机号">
+            </span>
+          </li>
+          <li class="sendCheckCode">发送验证码</li>
+          <li class="pws">
+            <img class="pws-icon" src="./img/tuceng-copy.png" />
+            <input type="password" placeholder="密码">
+          </li>
+          <li class="login-Submit">确认</li>
+        </ul>
+      </div>
+    </div>
   </div>
   <script src="./js/checkTheRuntimeEnvironment.js"></script>
+  <script src="./js/login.js"></script>
 </body>
 
 </html>

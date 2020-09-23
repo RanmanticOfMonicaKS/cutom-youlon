@@ -1,0 +1,145 @@
+/* 用户名邮箱登录页面  start*/
+.login {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.login-content {
+    position: absolute;
+    top: 20%;
+    height: 60%;
+    width: 25%;
+    left: 42%;
+    z-index: 999;
+    background-color: #fff;
+    padding: 30px;
+}
+
+.login-content>.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.login-type {
+    height: 40px;
+    line-height: 40px;
+    font-size: 0;
+    margin-bottom: 20px;
+}
+
+.login-type>span {
+    font-size: 14px;
+    display: inline-block;
+    width: 49%;
+    height: 100%;
+    text-align: center;
+
+}
+
+.login-type>span.active {
+    color: #ff6642;
+    border-bottom: 1px solid #ff6642;
+}
+
+.login-layout-username {
+    margin: 0 auto;
+    height: 60%;
+    width: 80%;
+}
+
+.login-layout-username>li {
+    height: 25%;
+    margin-bottom: 10px;
+}
+
+.idOrEmail,
+.pws {
+    position: relative;
+    border: 1px solid #eee;
+}
+
+.idOrEmail>.idOrEmail-icon,
+.pws>.pws-icon {
+    position: absolute;
+    left: 5px;
+    top: 25%;
+    height: 50%;
+}
+
+.idOrEmail>input,
+.pws>input {
+    height: 100%;
+    width: 100%;
+    padding-left: 40px;
+}
+
+.login-Submit {
+    background-color: #E9512E;
+    text-align: center;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+/* 用户名邮箱登录页面  end*/
+/* 手机号登录 start*/
+.phoneNumber {
+    font-size: 0;
+    line-height: 40px;
+}
+
+.phoneNumber>span {
+    display: inline-block;
+    width: 50%;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+.prefix-number {
+    border-right: 1px solid #eee;
+}
+
+.prefix-number>select {
+    width: 100%;
+}
+
+.login-layout-phone {
+    width: 80%;
+
+    margin: 0 auto;
+}
+
+.login-layout-phone>li {
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.phone-number {
+    height: 100%;
+    border-left: 0;
+
+}
+
+li.sendCheckCode {
+    height: 100%;
+    color: #000;
+    border: 0;
+}
+
+.phone-number>input {
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    display: block;
+}

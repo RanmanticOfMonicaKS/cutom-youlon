@@ -4,7 +4,17 @@
 **  先隐藏 */
 
 .web {
+  position: relative;
   display: none;
+}
+
+.click {
+  cursor: pointer;
+}
+
+.click:hover {
+  color: #ff6642;
+
 }
 
 /* 顶部欢迎条 */
@@ -18,6 +28,27 @@
 .welcomeTitle,
 .tipsAndInfo {
   height: 100%;
+}
+
+.appQrCode {
+  position: relative;
+}
+
+.appQrCode:hover>.qrCode {
+  display: block;
+}
+
+.qrCode {
+  position: absolute;
+  padding: 3px;
+  display: none;
+  top: 20px;
+  z-index: 999;
+  left: -50%;
+}
+
+.qrCode>img {
+  width: 140px;
 }
 
 .welcomeTitle {
