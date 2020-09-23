@@ -494,22 +494,37 @@
         <ul class="login-layout-phone" style="display: none;">
           <li class="phoneNumber">
             <span class="prefix-number">
-              <select name="prefix" id="">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+              <select name="prefix" id="preNumber">
+                <option value="+1">美国/加拿大(+1)</option>
+                <option value="+61">澳大利亚(+61)</option>
+                <option value="+64">新西兰(+64</option>
+                <option value="+44">英国(+44)</option>
+                <option value="+33">法国(+33)</option>
+                <option value="+49">德国(+49)</option>
+                <option value="+31">荷兰(+31)</option>
+                <option value="+32">比利时(+32)</option>
+                <option value="+353">爱尔兰(+353)</option>
+                <option value="+358">芬兰(+358)</option>
+                <option value="+39">意大利(+39)</option>
+                <option value="+45">丹麦(+45)</option>
+                <option value="+46">瑞典(+46)</option>
+                <option value="+47">挪威(+47)</option>
+                <option value="+65">新加坡(+65)</option>
+                <option value="+60">马来西亚(+60)</option>
+                <option value="+81">日本(+81)</option>
+                <option value="+27">南非(+27)</option>
+                <option value="+52">墨西哥(+52)</option>
+                <option value="+55">巴西(+55)</option>
+                <option value="+852">香港(+852)</option>
               </select>
             </span>
             <span class="phone-number">
               <input type="text" placeholder="输入手机号">
             </span>
+            <div class="sendCheckCode">发送验证码</div>
           </li>
-          <li class="sendCheckCode">发送验证码</li>
-          <li class="pws">
-            <img class="pws-icon" src="./img/tuceng-copy.png" />
-            <input type="password" placeholder="密码">
+          <li class="inputCheckCode">
+            <input type="password" placeholder="请输入验证码">
           </li>
           <li class="login-Submit">确认</li>
         </ul>
