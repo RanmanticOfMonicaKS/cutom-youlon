@@ -1,4 +1,12 @@
-
+var username = window.localStorage.getItem('username');
+var token = window.localStorage.getItem('token');
+ajax({
+    url:'http://127.0.0.1:8085/login?username='+username+'&token='+token,
+    method: 'get',
+    success: function(res){
+        console.log(res);
+    }
+});
 // 定义验证策略
 const strategy = (options) => {
     const { loginType } = options;
@@ -129,6 +137,7 @@ if (window.environment === 'web') {
                         // FIXME username 或登录缓存信息由接口返回
                         document.querySelector('.login').style.display = 'none';
                         window.localStorage.setItem('username','lilei');
+                        window.localStorage.setItem('token','abcdefg');
                         // TODO 后台返回的token存入下次登录先判断token和用户名，给后台，实现自动登录
                         var ylUserName = document.querySelector('.login-btn');
                         ylUserName.innerText = window.localStorage.getItem('username');

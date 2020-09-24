@@ -24,5 +24,5 @@ function ylAlert(content,during) {
     alertBox.className = 'alertBox active';
     setTimeout(() => {
         alertBox.className =  'alertBox';
-    }, (during+0.1)*1000);
+    }, (during+0.5)*1000);
 }

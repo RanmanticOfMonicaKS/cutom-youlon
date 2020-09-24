@@ -15,6 +15,9 @@ function ajax(options) {
 
     //启动并发送一个请求
     if (options.type == 'GET') {
+        if(options.token) {
+            xhr.setRequestHeader('token',options.token);
+        }
         xhr.open('GET', options.url + '?' + params, true);
         xhr.send(null);
     } else if (options.type == 'POST') {
