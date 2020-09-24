@@ -1,4 +1,3 @@
-console.log(document.querySelector('.sendCheckCode').innerText);
 if (window.environment === 'web') {
     (function() {
         // web login  -login页面显示关闭
@@ -52,7 +51,7 @@ if (window.environment === 'web') {
                 const { username } = options;
                 const { password } = options;
                 if (!username) return { result: false, message: '请输入用户名/邮箱' };
-                if (!password) return { result: false, message: '密码' };
+                if (!password) return { result: false, message: '请输入密码' };
                 return { result: true, message: 'success' };
             } else {
                 const { preNumber, sufNumber } = options;
@@ -78,10 +77,50 @@ if (window.environment === 'web') {
                 var sufNumber = document.querySelector('.phone-number>input').value;
                 options = { preNumber, sufNumber, loginType: '2' };
             }
-            if (!strategy(options).result) {
-                return document.querySelector('.errBox').innerText = strategy(options).message;
+            const { result, message } = strategy(options);
+            var errBox = document.querySelector('.errBox');
+            if (!result) {
+                errBox.innerText = message;
+                errBox.style.display = 'block';
+                return;
             }
+            errBox.style.display = 'none';
             // TODO AJAX
+            // mock - demo
+            Mock.setup({
+                timeout: '200 - 400'
+            });
+            // 拦截ajax设置
+            Mock.mock(
+                /127\.0\.0\.1:8085\/login/,
+                'get',
+                function({ url, type, body }) {
+                    console.log(url, '--->url');
+                    console.log(type, '--->type');
+                    console.log(body, '--->body');
+                    return {
+                        code: 200,
+                        data: {
+                            message: 'success'
+                        }
+                    };
+                }
+
+            );
+            ajax({
+                url: 'http://127.0.0.1:8085/login?username=lilei&password=111',
+                method: 'GET',
+                success: function(res) {
+                    console.log(res, '------->');
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+            var data = Mock.mock({
+                'String|1-10': 'awesome'
+            });
+            console.log(data);
         });
     })();
 } else {

@@ -80,6 +80,7 @@
 }
 
 .login-Submit {
+    position: relative;
     background-color: #E9512E;
     text-align: center;
     color: #fff;
@@ -88,7 +89,16 @@
     cursor: pointer;
 }
 
+.errBox {
+    position: absolute;
+    left: 5px;
+    top: -30px;
+    color: #ff6642;
+
+}
+
 /* 用户名邮箱登录页面  end*/
+
 /* 手机号登录 start*/
 .phoneNumber {
     font-size: 0;
