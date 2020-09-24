@@ -1,17 +1,4 @@
-// 获取请求参数，用户mock funtion来判断返回
-function getParam (url) {
-    console.log(url, '---->url');
-    let param ={};
-    if(typeof url !== 'string') {
-        return new Error('function need a String type param');
-    }
 
-    url.split('?')[1]
-        .split('&').forEach(item => {
-            param[item.split('=')[0]] = item.split('=')[1];
-        });
-    return param;
-}
 // 定义验证策略
 const strategy = (options) => {
     const { loginType } = options;
@@ -113,9 +100,12 @@ if (window.environment === 'web') {
                     var param = getParam(url);
                     if(param.username === 'lilei' && password === '111') {
 
-                        return Mock.mock({
-                            'boolean|1': true
-                        });
+                        return {
+                            code: 200,
+                            data: {
+                                message: 'success'
+                            }
+                        };
 
                     } else {
                         return JSON.stringify({
@@ -132,10 +122,19 @@ if (window.environment === 'web') {
                 url: 'http://127.0.0.1:8085/login?username=lilei&password=111',
                 method: 'GET',
                 success: function(res) {
-                    console.log( res.boolean);
-                    if(res.code == 200) {
-                        alert('登录成功');
-                        colseBtn.click();
+
+                    // FIXME  根据真实接口修改判断条件
+                    if(res.indexOf('success') !==-1) {
+                        ylAlert('登录成功',2);
+                        // FIXME username 或登录缓存信息由接口返回
+                        document.querySelector('.login').style.display = 'none';
+                        window.localStorage.setItem('username','lilei');
+                        // TODO 后台返回的token存入下次登录先判断token和用户名，给后台，实现自动登录
+                        var ylUserName = document.querySelector('.login-btn');
+                        ylUserName.innerText = window.localStorage.getItem('username');
+                        ylUserName.style.color = '#E9512E';
+                        ylUserName.className = 'yl-username';
+
                     }
                 },
                 error: function(err) {
