@@ -23,11 +23,10 @@
         <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
       <!end if-->
-    <title>游龙网</title>
 </head>
 
 <body style="height: 100%;">
-  <div class="alertBox"></div>
+    <div class="alertBox"></div>
     <div class="web clearfix" style="height:100%;">
         <!-- 头部欢迎条 -->
         <header class="topMenu">
@@ -49,8 +48,8 @@
                         </span>
                         <span class="click login-btn">登录 </span>
                         <span class="register click">注册 </span>
-                        <span class="click">个人中心</span>
-                        <select name="" id="">
+                        <span class="click personalCenter">个人中心</span>
+                        <select name="" id="moneyChoose">
                             <option value="American" label="美元"></option>
                             <option value="Canadian" label="加币"></option>
                             <option value="pound" label="英镑"></option>
@@ -300,7 +299,7 @@
                 </section>
             </div>
             <!-- 右侧公告和支付方式 -->
-            <div class="main-right col-lg-4 fr">
+            <div class="main-right col-lg-4 fr show-lg-block hide-sm">
                 <section class="howToPay">
                     <div class="title">
                         <h1>
@@ -541,6 +540,8 @@
     <script src="./js/checkTheRuntimeEnvironment.js"></script>
     <script src="./js/mock-min.js"></script>
     <script src="./js/ajax.js"></script>
+    <!-- 模拟接口返回 -->
+    <script src="./js/mock-ajax.js"></script>
     <!-- 功能函数 -->
     <script src="./js/utils.js"></script>
     <script src="./js/login.js"></script>

@@ -1,8 +1,5 @@
 console.log('web.js');
-console.log(window.google);
-// 兼容google加入收藏
-
-
+// 加入收藏功能
 function _addFavorite(sURL, sTitle) {
     try {
         //IE
@@ -16,3 +13,13 @@ function _addFavorite(sURL, sTitle) {
         }
     }
 }
+// 改变页面使用货币类型
+var select = document.querySelector('#moneyChoose');
+
+select.onchange = function(e) {
+    window.moneyType = this.value;
+};
+// FIXME 验证货币改变
+// document.querySelector('.personalCenter').onclick = function() {
+//     alert(window.moneyType);
+// };

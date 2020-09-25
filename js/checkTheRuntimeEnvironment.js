@@ -15,14 +15,14 @@ if (environment === 'web') {
     console.log('1111');
     webDom.style.display = 'block';
     const webJS = document.createElement('script');
-    webJS.src = './js/web.js';
+    webJS.src = '../js/web.js';
     document.querySelector('body').appendChild(webJS);
 } else {
     console.log('222');
     window.environment = 'phone';
     phoneDom.style.display = 'block';
     const phoneJS = document.createElement('script');
-    phoneJS.src = './js/phone.js';
+    phoneJS.src = '../js/phone.js';
     document.querySelector('body').appendChild(phoneJS);
-
 }
+window.moneyType = 'dollar';

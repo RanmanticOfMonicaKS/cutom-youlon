@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 分类页面 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0 maximum-scale=1.0, user-scalable=0" />
+    <title>直播&amp;视频-游龙网-充值_直播_游戏_苹果账号_海外点卡_海外华人充值</title>
+    <meta name="keywords" content="海外充值,苹果充值,AppStore充值,充值,映客,抖音 花椒 虎牙 陌陌 王者荣耀 Q币 YY币">
+    <meta name="description" content="游龙网为华人提供充值中国游戏,手游,直播充值,苹果AppStore,Q币,点卡,接受Paypal,Visa信用卡,5分钟快速服务,7X24小时客服在线。">
+    <meta property="qc:admins" content="255527765761416654636">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="max-age=7200">
+    <meta http-equiv="Cache" content="no-cache">
+    <link rel="stylesheet" href="../css/yl-common.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <!--[if lte IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+      <!end if-->
+</head>
+
+<body style="height: 100%;">
+    <div class="alertBox"></div>
+    <div class="web clearfix" style="height:100%;">
+        <!-- 头部欢迎条 -->
+        <header class="topMenu">
+            <div class="welcomeBar " @click="$alert.methods.success({content:'函数式',during:3})">
+                <div class="heart">
+                    <!-- 左侧欢迎语 -->
+                    <div class="welcomeTitle fl col-lg-6 hide-xs col-sm-6">
+                        <span>欢迎来到<strong>游龙网</strong>，全球华人都在用的充值平台</span>
+                    </div>
+                    <!-- 右侧功能键 -->
+                    <div class="tipsAndInfo fr col-lg-6 col-xs-6 col-sm-6">
+                        <span class="click" onclick="_addFavorite('www.youlon.com','游龙网-全球华人都在用的充值平台')">收藏本站</span>
+                        <span class="click appQrCode">
+                            <div class="qrCode">
+                                <img src="../img/top-app-code.png" alt="海外充值app游龙网">
+                            </div>
+                            <div class="fa fa-mobile"></div>
+                            APP
+                        </span>
+                        <span class="click login-btn">登录 </span>
+                        <span class="register click">注册 </span>
+                        <span class="click personalCenter">个人中心</span>
+                        <select name="" id="moneyChoose">
+                            <option value="American" label="美元"></option>
+                            <option value="Canadian" label="加币"></option>
+                            <option value="pound" label="英镑"></option>
+                            <option value="Euro" label="欧元"></option>
+                            <option value="Australian" label="澳元"></option>
+                            <option value="NZD" label="纽币"></option>
+                            <option value="Singapore" label="新币"></option>
+                            <option value="HKD" label="港币"></option>
+                            <option value="yen" label="日元"></option>
+                            <option value="MYR" label="马币"></option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- log and search -->
+            <div class="logAndSearch clearfix">
+                <div class="heart">
+                    <!-- logo -->
+                    <div class="logo fl col-lg-3">
+                        <!-- 京东做法 -->
+                        <a href="./index.html">
+                            <img src="../img/logo_pc.jpg" alt="海外充值">
+                            <h1>全球华人都在用的充值平台</h1>
+                        </a>
+                    </div>
+                    <!-- search -->
+                    <div class="search-container col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <input type="text" class="search" placeholder="关键词...">
+                        <button class="search-button">
+                            <i class="fa fa-search"></i>
+                            <span>搜索</span>
+                        </button>
+                        <div class="search-tips">
+                            <span>App Store</span>
+                            <span>吃鸡</span>
+                            <span>Q币</span>
+                            <span>Y币</span>
+                            <span>王者荣耀</span>
+                            <span>龙之谷</span>
+                            <span>仙境传说</span>
+                        </div>
+                    </div>
+                    <!-- connections -->
+                    <div class="yl-connections hide-xs">
+                        <a class="connect" href="##" onclick="javascript:void(0);">
+                            <img src="../img/contact-icon0.png" alt="">
+                            <div class="hoverContent">24小时在线客服</div>
+                        </a>
+                        <a class="connect" href="##" onclick="javascript:void(0);">
+                            <img src="../img/contact-icon1.png" alt="">
+                            <div class="hoverContent">
+                                <img src="../img/yl-wechat.jpg" alt="游龙公众号">
+                                <p>
+                                    微信号：<br />
+                                    youlon2017
+                                </p>
+                            </div>
+                        </a>
+                        <a class="connect" href="##" onclick="javascript:void(0);">
+                            <img src="../img/contact-icon2.png" alt="">
+                            <div class="hoverContent">
+                                qq: 291580
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- NavBar -->
+            <div class="navBar">
+                <ul class="heart">
+                    <li>
+                        <a class="first active" href="/default_pc.aspx" class="cur">首页</a>
+                    </li>
+                    <li>
+                        <div class="fakeborder"></div>
+                        <a href="/goods_223.html">苹果App Store</a>
+                    </li>
+
+                    <li>
+                        <div class="fakeborder"></div>
+                        <a href="/card_9.html">直播视频</a>
+                    </li>
+
+                    <li>
+                        <div class="fakeborder"></div>
+                        <a href="/card_12.html">手游</a>
+                    </li>
+
+                    <li>
+                        <div class="fakeborder"></div>
+                        <a href="/card_1.html">端游/页游</a>
+                    </li>
+
+                    <li>
+                        <div class="fakeborder"></div>
+                        <a href="/card_10.html">其他平台</a>
+                    </li>
+
+                    <li>
+                        <div class="fakeborder"></div>
+                        <a href="/goods_75.html">腾讯Q币</a>
+                    </li>
+
+                    <li>
+                        <div class="fakeborder"></div>
+                        <a href="/goods_236.html">网易藏宝阁</a>
+                    </li>
+
+                    <li>
+                        <div class="fakeborder"></div>
+                        <a href="/goods_193.html">多玩Y币</a>
+                    </li>
+
+                    <li>
+                        <div class="fakeborder"></div>
+                        <a href="/goods_977.html">游龙万能充</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- 主体部分 -->
+        <main class="heart yl-main clearfix">
+            <!-- 左侧列表 -->
+            <div class="main-left col-lg-8 fl">
+                <section class="hotRefill">
+                    <div class="title">
+                        <h1>
+                            <i class="fa fa-fire"></i>
+                            <span>热门充值</span>
+                        </h1>
+                    </div>
+                    <div class="content">
+                        <ul class="hotRefill flex-hw flex-h">
+                            <li class="hotRefill-item   flex-vc">
+                                <img src="../img/appStore-pay.png" alt="">
+                                <h5>苹果账号appStore</h5>
+                                <p><span class="yuan">50元</span>
+                                    <span class="dollar">美元8.9</span></p>
+                                <button class="yl-button">购买</button>
+                            </li>
+                            <li class="hotRefill-item  flex-vc">
+                                <img src="../img/appStore-pay.png" alt="">
+                                <h5>苹果账号appStore</h5>
+                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
+                                <button class="yl-button">购买</button>
+                            </li>
+                            <li class="hotRefill-item  flex-vc">
+                                <img src="../img/appStore-pay.png" alt="">
+                                <h5>苹果账号appStore</h5>
+                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
+                                <button class="yl-button">购买</button>
+                            </li>
+                            <li class="hotRefill-item  flex-vc">
+                                <img src="../img/appStore-pay.png" alt="">
+                                <h5>苹果账号appStore</h5>
+                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
+                                <button class="yl-button">购买</button>
+                            </li>
+                            <li class="hotRefill-item  flex-vc">
+                                <img src="../img/appStore-pay.png" alt="">
+                                <h5>苹果账号appStore</h5>
+                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
+                                <button class="yl-button">购买</button>
+                            </li>
+                            <li class="hotRefill-item  flex-vc">
+                                <img src="../img/appStore-pay.png" alt="">
+                                <h5>苹果账号appStore</h5>
+                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
+                                <button class="yl-button">购买</button>
+                            </li>
+                            <li class="hotRefill-item  flex-vc">
+                                <img src="../img/appStore-pay.png" alt="">
+                                <h5>苹果账号appStore</h5>
+                                <p><span class="yuan">50元</span>
+                                    <span class="dollar">美元8.9</span></p>
+                                <button class="yl-button">购买</button>
+                            </li>
+                            <li class="hotRefill-item  flexv">
+                                <img src="../img/appStore-pay.png" alt="">
+                                <h5>苹果账号appStore</h5>
+                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
+                                <button class="yl-button">购买</button>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="newRecommend">
+                    <h1>
+                        <i class="fa fa-star-o"></i>
+                        <span>新品推荐</span>
+                    </h1>
+                    <div class="content">
+                        <ul class="newRecommend flex-hw flex-h">
+                            <li class="newRecommend-item   flex-vc">
+                                <img src="../img/appStore-pay.png" alt="">
+                                <h5>苹果账号appStore</h5>
+                                <p><span class="yuan">50元</span>
+                                    <span class="dollar">美元8.9</span></p>
+                                <button class="yl-button">购买</button>
+                            </li>
+                            <li class="newRecommend-item  flex-vc">
+                                <img src="../img/appStore-pay.png" alt="">
+                                <h5>苹果账号appStore</h5>
+                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
+                                <button class="yl-button">购买</button>
+                            </li>
+                            <li class="newRecommend-item  flex-vc">
+                                <img src="../img/appStore-pay.png" alt="">
+                                <h5>苹果账号appStore</h5>
+                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
+                                <button class="yl-button">购买</button>
+                            </li>
+                            <li class="newRecommend-item  flex-vc">
+                                <img src="../img/appStore-pay.png" alt="">
+                                <h5>苹果账号appStore</h5>
+                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
+                                <button class="yl-button">购买</button>
+                            </li>
+                            <li class="newRecommend-item  flex-vc">
+                                <img src="../img/appStore-pay.png" alt="">
+                                <h5>苹果账号appStore</h5>
+                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
+                                <button class="yl-button">购买</button>
+                            </li>
+                            <li class="newRecommend-item  flex-vc">
+                                <img src="../img/appStore-pay.png" alt="">
+                                <h5>苹果账号appStore</h5>
+                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
+                                <button class="yl-button">购买</button>
+                            </li>
+                            <li class="newRecommend-item  flex-vc">
+                                <img src="../img/appStore-pay.png" alt="">
+                                <h5>苹果账号appStore</h5>
+                                <p><span class="yuan">50元</span>
+                                    <span class="dollar">美元8.9</span></p>
+                                <button class="yl-button">购买</button>
+                            </li>
+                            <li class="newRecommend-item  flexv">
+                                <img src="../img/appStore-pay.png" alt="">
+                                <h5>苹果账号appStore</h5>
+                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
+                                <button class="yl-button">购买</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                </section>
+            </div>
+            <!-- 右侧公告和支付方式 -->
+            <div class="main-right col-lg-4 fr show-lg-block hide-sm">
+                <!-- 筛选部分 -->
+                <section class="filtrate">
+                    <div class="title">
+                        <h1>
+                            <i class="fa fa-filter"></i>
+                            <span>筛选</span>
+                        </h1>
+                    </div>
+                    <div class="content">
+                        <ul class="wordFilter flex-hw flex-h">
+                            <li class="word-item active">全部</li>
+                            <li class="word-item">A</li>
+                            <li class="word-item">B</li>
+                            <li class="word-item">C</li>
+                            <li class="word-item">D</li>
+                            <li class="word-item">E</li>
+                            <li class="word-item">F</li>
+                            <li class="word-item">G</li>
+                            <li class="word-item">H</li>
+                            <li class="word-item">I</li>
+                            <li class="word-item">J</li>
+                            <li class="word-item">K</li>
+                            <li class="word-item">L</li>
+                            <li class="word-item">M</li>
+                            <li class="word-item">N</li>
+                            <li class="word-item">O</li>
+                            <li class="word-item">P</li>
+                            <li class="word-item">Q</li>
+                            <li class="word-item">R</li>
+                            <li class="word-item">S</li>
+                            <li class="word-item">T</li>
+                            <li class="word-item">U</li>
+                            <li class="word-item">V</li>
+                            <li class="word-item">W</li>
+                            <li class="word-item">X</li>
+                            <li class="word-item">Y</li>
+                            <li class="word-item">Z</li>
+                        </ul>
+                        <ul class="numFilter flex-hw flex-h">
+                            <li class="num-item">1</li>
+                            <li class="num-item">2</li>
+                            <li class="num-item">3</li>
+                            <li class="num-item">4</li>
+                            <li class="num-item">5</li>
+                            <li class="num-item">6</li>
+                            <li class="num-item">7</li>
+                            <li class="num-item">8</li>
+                            <li class="num-item">9</li>
+                            <li class="num-item">0</li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- 快速充值 -->
+                <section class="quickRefill">
+                    <div class="title">
+                        <h1>
+                            <i class="fa fa-dollar"></i>
+                            <span>快速充值</span>
+                        </h1>
+                    </div>
+                    <div class="content">
+                        <ul class="quickRefill-menu">
+                            <li class="quickRefill-menu-item acitve">苹果App</li>
+                            <li class="quickRefill-menu-item">微信服务</li>
+                            <li class="quickRefill-menu-item">Q币充值</li>
+                            <li class="quickRefill-menu-item">多玩Y币充值</li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- 快捷支付部分 -->
+                <section class="howToPay">
+                    <div class="title">
+                        <h1>
+                            <img src="../img/pay-h2.png" alt="支付方式">
+                            <span>支付方式</span>
+                        </h1>
+                    </div>
+                    <div class="content">
+                        <img src="../img/pay-icon1.png" alt="">
+                        <img src="../img/pay-icon1.png" alt="">
+                        <img src="../img/pay-icon1.png" alt="">
+                        <img src="../img/pay-icon1.png" alt="">
+                    </div>
+                </section>
+            </div>
+
+        </main>
+        <!-- 底部宣传广告 -->
+        <div class="yl-adv">
+            <div class="heart flex-hw flex-h">
+                <div class="adv-item">
+                    <img src="../img/advantage-icon1.png" alt="快速充值">
+                    <h5>1分钟极速发货</h5>
+                </div>
+                <div class="adv-item">
+                    <img src="../img/advantage-icon1.png" alt="快速充值">
+                    <h5>1分钟极速发货</h5>
+                </div>
+                <div class="adv-item">
+                    <img src="../img/advantage-icon1.png" alt="快速充值">
+                    <h5>1分钟极速发货</h5>
+                </div>
+                <div class="adv-item">
+                    <img src="../img/advantage-icon1.png" alt="快速充值">
+                    <h5>1分钟极速发货</h5>
+                </div>
+                <div class="adv-item">
+                    <img src="../img/advantage-icon1.png" alt="快速充值">
+                    <h5>1分钟极速发货</h5>
+                </div>
+                <div class="adv-item">
+                    <img src="../img/advantage-icon1.png" alt="快速充值">
+                    <h5>1分钟极速发货</h5>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <footer class="yl-footer">
+
+            <div class=" clearfix heart">
+                <div class="footer-item fl">
+                    <dl>
+                        <dt>
+                            <img src="../img/footer-icon1.png"></img>
+                            <span>游龙指南</span> <br />
+                            <i>WEB GUIDE</i>
+                        </dt>
+                        <dd>
+                            <a>关于游龙网</a><a>联系我们</a>
+
+                        </dd>
+                        <dd>
+                            <a>关于游龙网</a><a>联系我们</a>
+
+                        </dd>
+                    </dl>
+                </div>
+                <div class="footer-item fl">
+                    <dl>
+                        <dt>
+                            <img src="../img/footer-icon1.png" alt="">
+                            <span>游龙指南</span> <br />
+                            <i>WEB GUIDE</i>
+                        </dt>
+                        <dd>
+                            <a>关于游龙网</a><a>联系我们</a>
+
+                        </dd>
+                        <dd>
+                            <a>关于游龙网</a><a>联系我们</a>
+
+                        </dd>
+                    </dl>
+                </div>
+                <div class="footer-item fl">
+                    <dl>
+                        <dt>
+                            <img src="../img/footer-icon1.png"></img>
+                            <span>游龙指南</span><br />
+                            <i>WEB GUIDE</i>
+                        </dt>
+                        <dd>
+                            <a>关于游龙网</a><a>联系我们</a>
+                        </dd>
+                        <dd>
+                            <a>关于游龙网</a><a>联系我们</a>
+
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </footer>
+        <div class="yl-links">
+            <div class="friendlyLinks">友情链接：
+                <a href="https://game.qq.com">腾讯游戏</a>
+                <a href="https://game.qq.com">腾讯游戏</a>
+                <a href="https://game.qq.com">腾讯游戏</a>
+                <a href="https://game.qq.com">腾讯游戏</a>
+                <a href="https://game.qq.com">腾讯游戏</a>
+                <a href="https://game.qq.com">腾讯游戏</a>
+                <a href="https://game.qq.com">腾讯游戏</a>
+                <a href="https://game.qq.com">腾讯游戏</a>
+                <a href="https://game.qq.com">腾讯游戏</a>
+            </div>
+            <div class="linkLogos">
+                <img src="../img/icon_du.png" alt="百度">
+                <img src="../img/icon_du.png" alt="百度">
+                <img src="../img/icon_du.png" alt="百度">
+                <img src="../img/icon_du.png" alt="百度">
+            </div>
+            <p class="introduce">游龙网是全球最大的海外华人充值平台,提供手游游戏充值、直播平台充值、苹果app充值、游戏充值点卡,Q币. 支持Paypal、Visa、MasterCard信用卡付款</p>
+        </div>
+        <!-- 登录拟态页面 -->
+        <div class="login">
+            <div class="login-content">
+                <img class="close click" src="../img/close-icon.png" />
+                <div class="login-type">
+                    <span class="username-login click active" data-login="1">用户名登录</span>
+                    <span class="phone-login click" data-login="2">手机登录</span>
+                </div>
+                <!-- 用户名登录 -->
+                <ul class="login-layout-username">
+                    <li class="idOrEmail">
+                        <img class="idOrEmail-icon" src="../img/user.png" />
+                        <input type="text" placeholder="邮箱/账号">
+                    </li>
+                    <li class="pws">
+                        <img class="pws-icon" src="../img/tuceng-copy.png" />
+                        <input type="password" placeholder="密码">
+                    </li>
+                    <li class="about clearfix">
+                        <span class="click fl">免费注册</span>
+                        <span class="click fr">忘记密码</span>
+                    </li>
+                    <li class="login-Submit">
+                        登录
+                        <span class="errBox" style="display: none;"></span>
+                    </li>
+                </ul>
+                <!-- 手机号登录 -->
+                <ul class="login-layout-phone" style="display: none;">
+                    <li class="phoneNumber">
+                        <span class="prefix-number">
+                            <select name="prefix" id="preNumber">
+                                <option value="+1">美国/加拿大(+1)</option>
+                                <option value="+61">澳大利亚(+61)</option>
+                                <option value="+64">新西兰(+64</option>
+                                <option value="+44">英国(+44)</option>
+                                <option value="+33">法国(+33)</option>
+                                <option value="+49">德国(+49)</option>
+                                <option value="+31">荷兰(+31)</option>
+                                <option value="+32">比利时(+32)</option>
+                                <option value="+353">爱尔兰(+353)</option>
+                                <option value="+358">芬兰(+358)</option>
+                                <option value="+39">意大利(+39)</option>
+                                <option value="+45">丹麦(+45)</option>
+                                <option value="+46">瑞典(+46)</option>
+                                <option value="+47">挪威(+47)</option>
+                                <option value="+65">新加坡(+65)</option>
+                                <option value="+60">马来西亚(+60)</option>
+                                <option value="+81">日本(+81)</option>
+                                <option value="+27">南非(+27)</option>
+                                <option value="+52">墨西哥(+52)</option>
+                                <option value="+55">巴西(+55)</option>
+                                <option value="+852">香港(+852)</option>
+                            </select>
+                        </span>
+                        <span class="phone-number">
+                            <input type="text" placeholder="输入手机号">
+                        </span>
+                        <div class="sendCheckCode">发送验证码</div>
+                    </li>
+                    <li class="inputCheckCode">
+                        <input type="password" placeholder="请输入验证码">
+                    </li>
+                    <li class="login-Submit">
+                        <span class="errBox" style="display: none;"></span>
+                        确认
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../js/checkTheRuntimeEnvironment.js"></script>
+    <script src="../js/mock-min.js"></script>
+    <script src="../js/ajax.js"></script>
+    <!-- 模拟接口返回 -->
+    <script src="../js/mock-ajax.js"></script>
+    <!-- 功能函数 -->.
+    <script src="../js/utils.js"></script>
+    <script src="../js/login.js"></script>
+    <!-- TODO 模拟数据mock使用接口后移除 -->
+
+</body>
+
+</html>

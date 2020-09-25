@@ -4,496 +4,551 @@
 **  先隐藏 */
 
 .web {
-  position: relative;
-  display: none;
+    position: relative;
+    display: none;
 }
 
 .click {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .click:hover {
-  color: #ff6642;
-
+    color: #ff6642;
 }
 
 /* 顶部欢迎条 */
 .welcomeBar {
-  height: 30px;
-  background-color: #f5f5f5;
-  line-height: 29px;
-  border-bottom: 1px solid #e7e7e7;
+    height: 30px;
+    background-color: #f5f5f5;
+    line-height: 29px;
+    border-bottom: 1px solid #e7e7e7;
 }
 
 .welcomeTitle,
 .tipsAndInfo {
-  height: 100%;
+    height: 100%;
 }
 
 .appQrCode {
-  position: relative;
+    position: relative;
 }
 
 .appQrCode:hover>.qrCode {
-  display: block;
+    display: block;
 }
 
 .qrCode {
-  position: absolute;
-  padding: 3px;
-  display: none;
-  top: 20px;
-  z-index: 999;
-  left: -50%;
+    position: absolute;
+    padding: 3px;
+    display: none;
+    top: 20px;
+    z-index: 999;
+    left: -50%;
 }
 
 .qrCode>img {
-  width: 140px;
+    width: 140px;
 }
 
 .welcomeTitle {
-  text-align: left;
+    text-align: left;
 }
 
 .tipsAndInfo {
-  text-align: right;
+    text-align: right;
 }
 
 .welcomeTitle>span {
-  font-size: 10px;
+    font-size: 10px;
 }
 
 .welcomeTitle strong {
-  font-size: 10px;
-  font-weight: 700;
-  color: #ff6642;
+    font-size: 10px;
+    font-weight: 700;
+    color: #ff6642;
 }
 
 .tipsAndInfo>span {
-  font-size: 10px;
-  margin-right: 10px;
-  color: #666;
-  padding: 0 5px;
+    font-size: 10px;
+    margin-right: 10px;
+    color: #666;
+    padding: 0 5px;
 }
 
 .login,
 .register {
-  border-right: 1px solid #ccc;
+    border-right: 1px solid #ccc;
 }
 
 .tipsAndInfo>select {
-  font-size: 10px;
-  padding: 2px 20px 3px 5px;
-  border-color: #eee;
+    font-size: 10px;
+    padding: 2px 20px 3px 5px;
+    border-color: #eee;
 }
 
 .tipsAndInfo>select:checked {
-  color: #333;
+    color: #333;
 }
 
 .logAndSearch {
-  padding-top: 5px;
-  background-color: #fff;
-  box-sizing: border-box;
+    padding-top: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
 }
 
 /* logo */
 .logo {
-  cursor: pointer;
-  height: 90px;
+    cursor: pointer;
+    height: 90px;
 }
 
 .logo a {
-  display: inline-block;
-  width: 178px;
-  height: 80px;
+    display: inline-block;
+    width: 178px;
+    height: 80px;
 }
 
 .logo h1 {
-  display: inline-block;
-  text-indent: -999999px;
+    display: inline-block;
+    text-indent: -999999px;
 }
 
 
 /* 搜索框 */
 .search-container {
-  padding-top: 10px;
-  position: relative;
-  font-size: 0;
+    padding-top: 10px;
+    position: relative;
+    font-size: 0;
 }
 
 .search-container>.search {
-  border: 1px solid #ccc;
-  height: 35px;
-  padding: 10px 8px;
-  border-right: none;
-  width: 300px;
+    border: 1px solid #ccc;
+    height: 35px;
+    padding: 10px 8px;
+    border-right: none;
+    width: 300px;
 }
 
 .search-container>.search-button {
-  height: 35px;
-  background-color: #ff6642;
-  color: #fff;
-  padding: 8px;
+    height: 35px;
+    background-color: #ff6642;
+    color: #fff;
+    padding: 8px;
 
 }
 
 .search-button>span {
-  font-size: 12px;
-  padding-left: 5px;
+    font-size: 12px;
+    padding-left: 5px;
 }
 
 .search-button>i {
-  font-size: 12px;
-  color: #FFAA96;
+    font-size: 12px;
+    color: #FFAA96;
 }
 
 .search-tips {
-  position: absolute;
-  top: 44px;
-  left: 15px;
-  padding: 5px;
+    position: absolute;
+    top: 44px;
+    left: 15px;
+    padding: 5px;
 }
 
 .search-tips>span {
-  margin-right: 5px;
-  font-size: 10px;
-  color: #999;
+    margin-right: 5px;
+    font-size: 10px;
+    color: #999;
 }
 
 /* 联系方式 */
 .yl-connections {
-  padding-top: 10px;
+    padding-top: 10px;
 
 }
 
 .yl-connections>a.connect {
-  display: inline-block;
-  position: relative;
-  z-index: 10;
-  margin-left: 8px;
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    margin-left: 8px;
 }
 
 .yl-connections>a:hover>.hoverContent {
-  display: block;
+    display: block;
 }
 
 .hoverContent {
-  position: absolute;
-  display: none;
-  width: 130px;
-  left: -35px;
-  top: 50px;
-  padding: 10px 15px;
-  border: 1px solid #eee;
-  background-color: #fff;
-  font-size: 12px;
-  color: #666;
-  text-align: center;
+    position: absolute;
+    display: none;
+    width: 130px;
+    left: -35px;
+    top: 50px;
+    padding: 10px 15px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
 }
 
 .hoverContent img {
-  width: 100px;
-  margin-bottom: 5px;
+    width: 100px;
+    margin-bottom: 5px;
 }
 
 .hoverContent>p {
-  font-size: 12px;
-  text-align-last: left;
+    font-size: 12px;
+    text-align-last: left;
 }
 
 /* navBar */
 .navBar {
-  background-color: #ff6642;
-  height: 40px;
+    background-color: #ff6642;
+    height: 40px;
 }
 
 .navBar>.heart {
-  height: 40px;
+    height: 40px;
 }
 
 .navBar li {
-  position: relative;
-  line-height: 40px;
-  float: left;
-  width: 10%;
-  text-align: center;
+    position: relative;
+    line-height: 40px;
+    float: left;
+    width: 10%;
+    text-align: center;
 }
 
 .navBar li>a {
-  display: block;
-  height: 100%;
-  line-height: 40px;
+    display: block;
+    height: 100%;
+    line-height: 40px;
 }
 
 .navBar li>a.active {
-  background-color: #E9512E;
+    background-color: #E9512E;
 }
 
 .navBar li>a.first {
 
-  border-left: none;
+    border-left: none;
 }
 
 /* 模拟分割线 */
 .fakeborder {
-  position: absolute;
-  left: 0;
-  top: 14px;
-  width: 1px;
-  height: 12px;
-  background-color: rgb(226, 145, 107);
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 1px;
+    height: 12px;
+    background-color: rgb(226, 145, 107);
 }
 
 /* main部分开始 */
 
 .yl-main {
-  padding-top: 10px;
-  margin-bottom: 10px;
+    padding-top: 10px;
+    margin-bottom: 10px;
 }
 
 .main-left>section {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .main-left .hotRefill>li.hotRefill-item,
 .main-left .newRecommend>li.newRecommend-item {
-  text-align: center;
-  background-color: #fff;
-  width: 25%;
-  color: #ff6642;
-  padding: 10px;
-  line-height: 16px;
-  border-bottom: 1px solid #EDEDED;
-  border-right: 1px solid #EDEDED;
+    text-align: center;
+    background-color: #fff;
+    width: 25%;
+    color: #ff6642;
+    padding: 10px;
+    line-height: 16px;
+    border-bottom: 1px solid #EDEDED;
+    border-right: 1px solid #EDEDED;
+}
+
+.main-left .content li:hover {
+
+    background-color: #eee;
+    padding-top: 12px;
 }
 
 li.hotRefill-item>.yl-button,
 li.newRecommend-item>.yl-button {
-  display: inline-block;
-  text-align: center;
-  background-color: #ff6642;
-  width: 80%;
-  padding: 2px 0;
-  color: #fff;
+    display: inline-block;
+    text-align: center;
+    background-color: #ff6642;
+    width: 80%;
+    padding: 2px 0;
+    color: #fff;
 }
 
 .main-left h1 {
-  font-weight: normal;
-  color: #ff6642;
-  height: 40px;
-  line-height: 40px;
+    font-weight: normal;
+    color: #ff6642;
+    height: 40px;
+    line-height: 40px;
 }
 
-.main-left h1>i,
-.main-right h1>i {
-  margin-right: 5px;
-  font-size: 14px;
+.main-left h1>.fa,
+.main-right h1>.fa {
+    margin-right: 5px;
+    font-size: 16px;
+    color: #ccc;
 }
 
 .main-left h1>span,
 .main-right h1>span {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 .main-left .content,
 .main-right .content {
-  /* height: 300px; */
-  border-top: 2px solid #F16134;
-  background-color: #fff;
+    /* height: 300px; */
+    border-top: 2px solid #F16134;
+    background-color: #fff;
 }
 
 .main-left .content p>span.yuan {
-  font-size: 10px;
+    font-size: 10px;
 }
 
 .main-left .content p>span.dollar {
-  font-size: 12px;
+    font-size: 12px;
 }
 
 
 /* 右侧 */
 .main-right.fr {
-  float: right;
+    float: right;
 }
 
 .main-right section {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .main-right h1 {
-  height: 40px;
-  line-height: 40px;
-  font-size: 12px;
-  font-weight: normal;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    font-weight: normal;
 }
 
 .howToPay .content img {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .main-right img {
-  padding-right: 8px;
+    padding-right: 8px;
 
 }
 
 .main-right h1>span {
-  margin-right: 8px;
+    margin-right: 8px;
 }
 
 .main-right .content {
-  padding: 20px;
-  background-color: #fff;
-  border-top: 1px solid #F16134;
+    padding: 20px;
+    background-color: #fff;
+    border-top: 1px solid #F16134;
 
 }
 
 /* 右侧公告 */
 
 .main-right .content>.news {
-  color: #272727;
-  line-height: 20px;
-  font-size: 12px;
+    color: #666;
+    line-height: 20px;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.main-right p.news:hover {
+    color: #ff6642;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 .latestBulletin span.active {
-  color: #F16134
+    color: #F16134
 }
 
 .news>i {
-  margin-right: 8px;
+    margin-right: 8px;
 }
 
 /* 右侧购物流程 */
 .shopping-process .content {
-  padding-left: 40px;
-  padding-top: 30px;
+    padding-left: 40px;
+    padding-top: 30px;
 }
 
 .shopping-process .content .step {
-  position: relative;
-  font-size: 16px;
-  padding-left: 50px;
-  color: #777;
-  border-left: 1px solid #FBD0C2;
+    position: relative;
+    font-size: 16px;
+    padding-left: 50px;
+    color: #777;
+    border-left: 1px solid #FBD0C2;
 }
 
 .content .step>.text {
-  padding: 25px 0 35px 0;
-  border-bottom: 1px solid #EEEEEE;
+    padding: 25px 0 35px 0;
+    border-bottom: 1px solid #EEEEEE;
 
 }
 
 .shopping-process .content .step>.icon {
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  background-color: #fff;
-  border-radius: 50%;
-  border: 1px dashed #E9512E;
-  left: -32px;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px dashed #E9512E;
+    left: -32px;
 }
 
 
 .step>.icon>img {
-  margin: 19px 17px;
-  padding: 0;
-  z-index: 10;
+    margin: 19px 17px;
+    padding: 0;
+    z-index: 10;
 }
+
+
+/* 右侧筛选 */
+.main-right .content .word-item {
+    font-size: 16px;
+}
+
+.main-right .content .word-item.active {
+    color: #ff6642;
+}
+
+.filtrate ul {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.filtrate .word-item {
+    width: 45px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.filtrate .num-item {
+    width: 25px;
+    height: 30px;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+ul.numFilter {
+    padding: 0;
+    border: 0;
+}
+
+/*  右侧快速充值 */
+.quickRefill-menu-item {}
 
 /* 底部广告部分 */
 .yl-adv {
-  background-color: #fff;
-  padding: 20px 0;
+    background-color: #fff;
+    padding: 20px 0;
 }
 
 .adv-item {
-  width: 16.66%;
-  text-align: center;
-  line-height: 20px;
+    width: 16.66%;
+    text-align: center;
+    line-height: 20px;
 }
 
 .adv-item>h5 {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 /* footer */
 .yl-footer {
-  background-color: #313131;
-  padding: 30px 0;
+    background-color: #313131;
+    padding: 30px 0;
 }
 
 .footer-item {
-  width: 33.33%;
-  background-color: #313131;
+    width: 33.33%;
+    background-color: #313131;
 }
 
 .footer-item>dl {
-  padding: 0px 0px 20px 10px;
-  border-right: 1px solid #464646;
+    padding: 0px 0px 20px 10px;
+    border-right: 1px solid #464646;
 }
 
 .footer-item dt {
-  line-height: 20px;
-  margin-bottom: 20px;
+    line-height: 20px;
+    margin-bottom: 20px;
 }
 
 .footer-item dd {
-  padding-left: 54px;
-  margin-bottom: 20px;
+    padding-left: 54px;
+    margin-bottom: 20px;
 }
 
 .footer-item dd>a {
-  width: 50%;
-  display: inline-block;
-  font-size: 10px;
-  color: #BEBEBE;
+    width: 50%;
+    display: inline-block;
+    font-size: 10px;
+    color: #BEBEBE;
 }
 
 .footer-item img {
-  margin-right: 10px;
-  float: left;
+    margin-right: 10px;
+    float: left;
 }
 
 .footer-item span {
-  font-size: 16px;
-  color: #fff;
-  margin-bottom: 10px;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 10px;
 }
 
 .footer-item i {
-  color: #4D4D4D;
+    color: #4D4D4D;
 }
 
 /* 友情链接部分 */
 .yl-links {
-  background-color: #272727;
-  height: 150px;
-  padding-top: 10px;
-  font-size: 12px;
-  text-align: center;
-  color: #BBBBBB;
+    background-color: #272727;
+    height: 150px;
+    padding-top: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: #BBBBBB;
 }
 
 .friendlyLinks {
-  height: 40px;
-  line-height: 40px;
+    height: 40px;
+    line-height: 40px;
 }
 
 .linkLogos {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 
 }
 
 .yl-links>.friendlyLinks>a {
-  margin-right: 3px;
-  color: #BBBBBB;
+    margin-right: 3px;
+    color: #BBBBBB;
 }
 
 .linkLogos>img {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 .introduce {
-  font-size: 12px;
+    font-size: 12px;
 }

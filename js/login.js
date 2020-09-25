@@ -1,12 +1,39 @@
-var username = window.localStorage.getItem('username');
-var token = window.localStorage.getItem('token');
-ajax({
-    url:'http://127.0.0.1:8085/login?username='+username+'&token='+token,
-    method: 'get',
-    success: function(res){
-        console.log(res);
-    }
-});
+console.log(window.moneyType);
+if (window.environment === 'web') {
+    //登录方式
+    var loginType = '1';
+    mainWeb();
+} else {
+    mainPhone();
+}
+// 更改登录状态
+function switchLogin() {
+    var ylUserName = document.querySelector('.login-btn');
+    ylUserName.innerText = window.localStorage.getItem('username');
+    ylUserName.style.color = '#E9512E';
+    // 移除点击登录
+    ylUserName.onclick = null;
+    console.dir(ylUserName);
+    // 允许滚动
+    document.querySelector('body').style.overflow = 'auto';
+    document.querySelector('.login').style.display = 'none';
+    // 移除监听enter发送login请求
+    console.dir(document);
+    document.onkeydown = null;
+    // 添加退出功能按钮
+    var exitBtn = document.createElement('span');
+    exitBtn.className = 'exitBtn click';
+    exitBtn.innerText = '退出';
+    insertAfter(exitBtn, document.querySelector('.login-btn'));
+    exitBtn.onclick = function() {
+        window.localStorage.setItem('token', '');
+        window.localStorage.setItem('username', '');
+        document.querySelector('.login-btn').innerText = '登录';
+        document.querySelector('.login-btn').style.color = '#666';
+        this.style.display = 'none';
+        loginHandler();
+    };
+}
 // 定义验证策略
 const strategy = (options) => {
     const { loginType } = options;
@@ -24,140 +51,152 @@ const strategy = (options) => {
         return { result: true, message: 'success' };
     }
 };
-if (window.environment === 'web') {
-    (function() {
-        // web login  -login页面显示关闭
-        var login = document.querySelector('.login');
-        var loginBtn = document.querySelector('.login-btn');
-        loginBtn.addEventListener('click', function() {
-            document.querySelector('body').style.overflow = 'hidden';
-            login.style.display = 'block';
-        }, false);
-        var colseBtn = document.querySelector('.close');
-        colseBtn.addEventListener('click', function() {
-            document.querySelector('body').style.overflow = 'auto';
-            login.style.display = 'none';
-        }, false);
-        /* esc 退出 */
-        document.addEventListener('keydown', function(e) {
-            if (e.code === 'Escape') {
-                document.querySelector('body').style.overflow = 'auto';
 
-                login.style.display = 'none';
-            }
-        }, false);
+// 自动登录
+function mainWeb() {
 
-        // 2、 登录方式样式切换
-        //登录方式
-        var loginType = '1';
-        var usernameBtn = document.querySelector('.username-login');
-        var phoneBtn = document.querySelector('.phone-login');
-        //邮箱用户名登录
-        usernameBtn.addEventListener('click', function() {
-            document.querySelector('.login-layout-username').style.display = 'block';
-            document.querySelector('.login-layout-phone').style.display = 'none';
-            this.className = 'username-login click active';
-            this.nextElementSibling.className = 'phone-login click';
-            loginType = '1';
-        }, false);
-        // 手机号登录
-        phoneBtn.addEventListener('click', function() {
-            document.querySelector('.login-layout-username').style.display = 'none';
-            document.querySelector('.login-layout-phone').style.display = 'block';
+    var username = window.localStorage.getItem('username');
+    var token = window.localStorage.getItem('token');
+    if (!username || !token) {
+        loginHandler();
+        return ylAlert('自动登录失败，请手动登录', 2);
+    }
+    ajax({
+        url: 'http://127.0.0.1:8085/login?username=' + username + '&token=' + token,
+        method: 'GET',
+        success: function(res) {
+            console.log(res);
+            if (res.indexOf('success') !== -1) {
 
-            this.className = 'phone-login click active';
-            this.previousElementSibling.className = 'username-login click';
-            loginType = '2';
-        }, false);
+                switchLogin();
 
-
-        // 4、 登录功能
-
-        var submitBtn = document.querySelector('.login-Submit');
-        submitBtn.addEventListener('click', function() {
-            let options = {};
-            if (loginType === '1') {
-                console.log('111');
-                var username = document.querySelector('.idOrEmail>input').value;
-                var password = document.querySelector('.pws>input').value;
-                console.log(username, '---', password);
-                options = { loginType: '1', username, password };
             } else {
-                var preNumber = document.querySelector('#preNumber').value;
-                var sufNumber = document.querySelector('.phone-number>input').value;
-                options = { preNumber, sufNumber, loginType: '2' };
+                ylAlert('自动登录失败，请手动登录', 2);
+                loginHandler();
             }
-            const { result, message } = strategy(options);
-            var errBox = document.querySelector('.errBox');
-            if (!result) {
-                errBox.innerText = message;
-                errBox.style.display = 'block';
-                return;
-            }
-            errBox.style.display = 'none';
-            // TODO AJAX
-            // mock - demo
-            Mock.setup({
-                timeout: '200 - 400'
-            });
-            // 拦截ajax设置
-            Mock.mock(
-                /127\.0\.0\.1:8085\/login/,
-                'get',
-                function({ url, type, body }) {
-                    var param = getParam(url);
-                    if(param.username === 'lilei' && password === '111') {
-
-                        return {
-                            code: 200,
-                            data: {
-                                message: 'success'
-                            }
-                        };
-
-                    } else {
-                        return JSON.stringify({
-                            code: 300,
-                            data: {
-                                message: 'password or username is not correct'
-                            }
-                        });
-                    }
-                }
-
-            );
-            ajax({
-                url: 'http://127.0.0.1:8085/login?username=lilei&password=111',
-                method: 'GET',
-                success: function(res) {
-
-                    // FIXME  根据真实接口修改判断条件
-                    if(res.indexOf('success') !==-1) {
-                        ylAlert('登录成功',2);
-                        // FIXME username 或登录缓存信息由接口返回
-                        document.querySelector('.login').style.display = 'none';
-                        window.localStorage.setItem('username','lilei');
-                        window.localStorage.setItem('token','abcdefg');
-                        // TODO 后台返回的token存入下次登录先判断token和用户名，给后台，实现自动登录
-                        var ylUserName = document.querySelector('.login-btn');
-                        ylUserName.innerText = window.localStorage.getItem('username');
-                        ylUserName.style.color = '#E9512E';
-                        ylUserName.className = 'yl-username';
-
-                    }
-                },
-                error: function(err) {
-                    console.log(err);
-                }
-            });
-            var data = Mock.mock({
-                'String|1-10': 'awesome'
-            });
-            console.log(data);
-        });
-    })();
-} else {
-    (function() {
-        // TODO phone login
-    })();
+        },
+        error: function(e) {
+            ylAlert('自动登录失败，请手动登录', 2);
+            loginHandler();
+        }
+    });
 }
+// 登录验证和发送逻辑
+function submitHandler() {
+    let options = {};
+    if (loginType === '1') {
+        console.log('111');
+        var username = document.querySelector('.idOrEmail>input').value;
+        var password = document.querySelector('.pws>input').value;
+        console.log(username, '---', password);
+        options = { loginType: '1', username, password };
+    } else {
+        var preNumber = document.querySelector('#preNumber').value;
+        var sufNumber = document.querySelector('.phone-number>input').value;
+        options = { preNumber, sufNumber, loginType: '2' };
+    }
+    const { result, message } = strategy(options);
+    var errBox = document.querySelector('.errBox');
+    if (!result) {
+        errBox.innerText = message;
+        errBox.style.display = 'block';
+        return;
+    }
+    errBox.style.display = 'none';
+    // TODO AJAX
+
+    ajax({
+        url: 'http://127.0.0.1:8085/login?username=lilei&password=111',
+        method: 'GET',
+        success: function(res) {
+
+            // FIXME  根据真实接口修改判断条件
+            if (res.indexOf('success') !== -1) {
+                ylAlert('登录成功', 2);
+                // FIXME username 或登录缓存信息由接口返回
+                document.querySelector('.login').style.display = 'none';
+                window.localStorage.setItem('username', 'lilei');
+                window.localStorage.setItem('token', 'abcdefg');
+                // TODO 后台返回的token存入下次登录先判断token和用户名，给后台，实现自动登录
+                switchLogin();
+            }
+        },
+        error: function(err) {
+            console.log(err);
+        }
+    });
+}
+
+// 手动登录后续逻辑
+function loginHandler() {
+    // web login  -login页面显示关闭
+    var login = document.querySelector('.login');
+    var loginBtn = document.querySelector('.login-btn');
+    loginBtn.onclick = function() {
+        console.log(window.moneyType);
+
+        document.querySelector('body').style.overflow = 'hidden';
+        login.style.display = 'block';
+        document.querySelector('.pws>input').value = '';
+        // enter键控制登录
+        document.onkeydown = function(e) {
+            console.log(e.code);
+            if (e.code === 'Enter' && document.querySelector('.login-Submit')) {
+                submitHandler();
+            }
+        };
+    };
+    var colseBtn = document.querySelector('.close');
+    colseBtn.addEventListener('click', function() {
+        document.querySelector('body').style.overflow = 'auto';
+        login.style.display = 'none';
+    }, false);
+    /* esc 退出 */
+    document.addEventListener('keydown', function(e) {
+        if (e.code === 'Escape') {
+            document.querySelector('body').style.overflow = 'auto';
+
+            login.style.display = 'none';
+        }
+    }, false);
+
+    // 2、 登录方式样式切换
+    var usernameBtn = document.querySelector('.username-login');
+    var phoneBtn = document.querySelector('.phone-login');
+    //邮箱用户名登录
+    usernameBtn.addEventListener('click', function() {
+        document.querySelector('.login-layout-username').style.display = 'block';
+        document.querySelector('.login-layout-phone').style.display = 'none';
+        this.className = 'username-login click active';
+        this.nextElementSibling.className = 'phone-login click';
+        loginType = '1';
+    }, false);
+    // 手机号登录
+    phoneBtn.addEventListener('click', function() {
+        document.querySelector('.login-layout-username').style.display = 'none';
+        document.querySelector('.login-layout-phone').style.display = 'block';
+
+        this.className = 'phone-login click active';
+        this.previousElementSibling.className = 'username-login click';
+        loginType = '2';
+    }, false);
+
+
+    // 4、 登录功能
+
+    var submitBtn = document.querySelector('.login-Submit');
+    submitBtn.onclick = submitHandler;
+}
+
+//手机端登录逻辑
+function mainPhone() {
+    console.log('phone-login');
+}
+
+
+/**
+  mock - demo
+ * ajax拦截
+ *
+ *
+ */
