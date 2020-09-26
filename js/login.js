@@ -1,4 +1,3 @@
-console.log(window.moneyType);
 if (window.environment === 'web') {
     //登录方式
     var loginType = '1';
@@ -59,7 +58,7 @@ function mainWeb() {
     var token = window.localStorage.getItem('token');
     if (!username || !token) {
         loginHandler();
-        return ylAlert('自动登录失败，请手动登录', 2);
+        return; // 第一次打开并不需要自动登录提示
     }
     ajax({
         url: 'http://127.0.0.1:8085/login?username=' + username + '&token=' + token,
@@ -92,7 +91,7 @@ function submitHandler() {
         options = { loginType: '1', username, password };
     } else {
         var preNumber = document.querySelector('#preNumber').value;
-        var sufNumber = document.querySelector('.phone-number>input').value;
+        var sufNumber = document.querySelector('.suf-number>input').value;
         options = { preNumber, sufNumber, loginType: '2' };
     }
     const { result, message } = strategy(options);
@@ -146,19 +145,12 @@ function loginHandler() {
             }
         };
     };
-    var colseBtn = document.querySelector('.close');
+    var colseBtn = document.querySelector('.login-close');
     colseBtn.addEventListener('click', function() {
         document.querySelector('body').style.overflow = 'auto';
         login.style.display = 'none';
     }, false);
-    /* esc 退出 */
-    document.addEventListener('keydown', function(e) {
-        if (e.code === 'Escape') {
-            document.querySelector('body').style.overflow = 'auto';
 
-            login.style.display = 'none';
-        }
-    }, false);
 
     // 2、 登录方式样式切换
     var usernameBtn = document.querySelector('.username-login');

@@ -454,7 +454,20 @@ ul.numFilter {
 }
 
 /*  右侧快速充值 */
-.quickRefill-menu-item {}
+.main-right section.quickRefill .content {
+    padding: 0;
+}
+
+.quickRefill-menu-item {
+    padding: 10px 8px;
+    line-height: 20px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.quickRefill li.quickRefill-menu-item.active {
+    border-bottom: 1px solid #E9512E;
+}
 
 /* 底部广告部分 */
 .yl-adv {

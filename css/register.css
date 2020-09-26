@@ -1,0 +1,131 @@
+.register {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.register-content {
+    position: absolute;
+    top: 20%;
+    height: 350px;
+    width: 320px;
+    left: 35%;
+    z-index: 999;
+    background-color: #fff;
+    padding: 30px;
+}
+
+.register-welcome {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-bottom: 1px solid #E9512E;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.email,
+.pws,
+.useGiftBag {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #eee;
+}
+
+
+
+.email,
+.pws {
+    margin-bottom: 15px;
+}
+
+.register-content>.register-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.email>.idOrEmail-icon,
+.pws>.pws-icon {
+    position: absolute;
+    left: 5px;
+    top: 25%;
+    height: 50%;
+}
+
+.email>.fa {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    font-size: 16px;
+    z-index: 9999999;
+}
+
+.email>input,
+.pws>input {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding-left: 30px;
+}
+
+.pws>img.visible {
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    cursor: pointer;
+}
+
+.register .phoneNumber {
+    border: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+.register .phoneNumber select {
+    font-size: 12px;
+}
+
+.useGiftCard {
+    border: 0;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+.useGiftCard>.fa {
+    vertical-align: middle;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.useGiftCard>.fa-check {
+    color: #E9512E;
+}
+
+.register-Submit {
+    position: relative;
+    cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+    background-color: #E9512E;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.register-Submit .errBox {
+    position: absolute;
+    left: 50%;
+    top: -46px;
+    color: #ff6642;
+    text-align: right;
+    width: 50%;
+}

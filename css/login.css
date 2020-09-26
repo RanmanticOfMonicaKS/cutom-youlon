@@ -12,15 +12,15 @@
 .login-content {
     position: absolute;
     top: 20%;
-    height: 60%;
-    width: 30%;
+    height: 350px;
+    width: 320px;
     left: 35%;
     z-index: 999;
     background-color: #fff;
     padding: 30px;
 }
 
-.login-content>.close {
+.login-content>.login-close {
     position: absolute;
     right: 10px;
     top: 10px;
@@ -136,7 +136,7 @@
     position: relative;
 }
 
-.phone-number {
+.suf-number {
     height: 100%;
     border-left: 0;
 
@@ -154,7 +154,7 @@
     cursor: pointer;
 }
 
-.phone-number>input {
+.suf-number>input {
     height: 30px;
     line-height: 30px;
     width: 100%;
