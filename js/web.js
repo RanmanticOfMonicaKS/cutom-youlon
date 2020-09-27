@@ -67,3 +67,17 @@ function controlBreadCrumbs() {
 if (document.querySelector('.web').classList.contains('personalCenter')) {
     document.querySelector('.breadcrumbs').style.display = 'block';
 }
+
+// 7、点击个人中心进入个人中心页面
+document.querySelector('.personalCenter').onclick = function() {
+    // 如果没有登录了
+    var loginBtn = document.querySelector('.login-btn');
+    if (loginBtn) {
+        ylAlert('您还未登录，请您先登录...');
+        loginBtn.click();
+    } else {
+        var a = document.createElement('a');
+        a.href = './personalCenter.html';
+        a.click();
+    }
+};

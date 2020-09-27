@@ -8,6 +8,7 @@ if (window.environment === 'web') {
 // 更改登录状态
 function switchLogin() {
     var ylUserName = document.querySelector('.login-btn');
+    ylUserName.className = 'yl-username';
     ylUserName.innerText = window.localStorage.getItem('username');
     ylUserName.style.color = '#E9512E';
     // 移除点击登录
@@ -23,12 +24,14 @@ function switchLogin() {
     var exitBtn = document.createElement('span');
     exitBtn.className = 'exitBtn click';
     exitBtn.innerText = '退出';
-    insertAfter(exitBtn, document.querySelector('.login-btn'));
+    var user = document.querySelector('.yl-username');
+    insertAfter(exitBtn, user);
     exitBtn.onclick = function() {
         window.localStorage.setItem('token', '');
         window.localStorage.setItem('username', '');
-        document.querySelector('.login-btn').innerText = '登录';
-        document.querySelector('.login-btn').style.color = '#666';
+        user.innerText = '登录';
+        user.style.color = '#666';
+        user.className = 'click login-btn';
         this.style.display = 'none';
         loginHandler();
     };
