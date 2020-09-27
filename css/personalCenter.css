@@ -4,14 +4,26 @@
     color: #666;
 }
 
+main.yl-main {
+    position: relative;
+}
+
 .personalCenter .main-left {
-    min-width: 200px;
-    height: 900px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    min-width: 180px;
+    min-height: 200px;
+    background-color: #fff;
 }
 
 .personalCenter-menu {
+    font-size: 0;
     height: 100%;
-
+    width: 100%;
+    background-color: #fff;
+    cursor: pointer;
 }
 
 .personalCenter-menu-item {
@@ -22,28 +34,31 @@
     text-align: left;
     padding-left: 15px;
     line-height: 50px;
+    border-top: 1px solid #eee;
 }
 
 .personalCenter-menu-item>.icon {
     display: inline-block;
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
     vertical-align: middle;
+    background-size: 22px 22px;
+}
+
+.personalCenter-menu-item>span {
+    font-size: 14px;
 }
 
 .personalCenter-menu-item>.icon.user {
     background-image: url('../img/personalCenter-user.png');
-    background-size: 18px 18px;
 }
 
 .personalCenter-menu-item>.icon.deals {
     background-image: url('../img/personalCenter-deals.png');
-    background-size: 18px 18px;
 }
 
 .personalCenter-menu-item>.icon.yue {
     background-image: url('../img/personalCenter-yue.png');
-    background-size: 18px 18px;
 }
 
 
@@ -68,4 +83,119 @@
 
 .personalCenter-menu-item.active>span {
     color: #fff;
+}
+
+/* 菜单栏响应式*/
+@media screen and (min-width: 1200px) {
+    .personalCenter-menu {
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+    .personalCenter .main-left {
+        width: 100%;
+    }
+
+    .personalCenter-menu-item {
+        width: 20%;
+        text-align: center;
+        border-right: 1px solid #eee;
+    }
+
+    .personalCenter .main-right {
+        float: left;
+    }
+}
+
+
+/* 右侧 */
+.personalCenter .main-right {
+    margin-left: 200px;
+    width: 980px;
+    min-height: 300px;
+    height: 100%;
+}
+
+.personalCenter .main-right h1 {
+    line-height: 15px;
+}
+
+.main-right .myInfo {
+    height: 100%;
+}
+
+.main-right .myInfo .content {
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+    padding: 46px 30px 54px 35px;
+    border: 1px solid #eee;
+    border-top: 1px solid #E9512E;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .03);
+}
+
+.main-right .myInfo .content>.user-icon {
+    position: absolute;
+    left: 35px;
+    top: 46px;
+    width: 67px;
+    height: 68px;
+    padding-top: 9px;
+    padding-left: 9px;
+    background-color: transparent;
+}
+
+.user-icon>img {
+    width: 50px;
+    height: 50px;
+}
+
+.user-content {
+    margin-left: 80px;
+    height: 150px;
+}
+
+.user-info {
+    line-height: 30px;
+}
+
+.user-info img {
+    padding: 0;
+    vertical-align: baseline;
+}
+
+.user-info>p>b {
+    font-size: 20px;
+    color: #E9512E;
+    margin-right: 33px;
+}
+
+.user-info>p>span {
+    font-size: 20px;
+}
+
+.credits>img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.credits>span {
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+/* 足迹部分样式 */
+.main-right .content {
+    padding: 0;
+}
+
+.main-right .content li {
+    width: 25%;
+    text-align: center;
+    padding: 15px;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }

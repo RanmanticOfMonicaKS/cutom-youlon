@@ -78,6 +78,45 @@ img {
     transition: all 0.5s;
 }
 
+.confirmBox {
+    position: absolute;
+    padding: 20px 50px;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    z-index: 99999;
+    font-size: 14px;
+    color: #1461c7;
+    background-color: #fff;
+    border: 1px solid #1461c7;
+}
+
+.confirmBox .info {
+    margin-bottom: 20px;
+}
+
+.confirmBox>.yes-btn,
+.confirmBox>.no-btn {
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 14px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.confirmBox>.yes-btn {
+    background-color: rgb(47, 206, 33);
+}
+
+.confirmBox>.no-btn {
+    background-color: rgb(218, 57, 57);
+}
+
+.confirmBox.active {
+    transform: translate(-50%, 50%);
+    transition: all 0.5s;
+}
+
+
 h5 {
     color: #444444;
     font-size: 12px;
@@ -138,7 +177,7 @@ body {
 
 /* 版心 */
 .heart {
-    width: 1000px;
+    width: 1200px;
     margin: 0 auto;
 }
 

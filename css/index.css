@@ -257,6 +257,10 @@
 
 }
 
+.breadcrumbs>span>a:hover {
+    color: #cf2c07;
+}
+
 /* 模拟分割线 */
 .fakeborder {
     position: absolute;
@@ -290,7 +294,7 @@
     border-right: 1px solid #EDEDED;
 }
 
-.main-left .content li:hover {
+.yl-main .content li:hover {
 
     background-color: #eee;
     padding-top: 12px;

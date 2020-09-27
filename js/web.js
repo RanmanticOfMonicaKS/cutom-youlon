@@ -69,7 +69,7 @@ if (document.querySelector('.web').classList.contains('personalCenter')) {
 }
 
 // 7、点击个人中心进入个人中心页面
-document.querySelector('.personalCenter').onclick = function() {
+document.querySelector('span.personalCenter-btn').onclick = function() {
     // 如果没有登录了
     var loginBtn = document.querySelector('.login-btn');
     if (loginBtn) {
@@ -77,7 +77,20 @@ document.querySelector('.personalCenter').onclick = function() {
         loginBtn.click();
     } else {
         var a = document.createElement('a');
-        a.href = './personalCenter.html';
+        a.href = './personalCenter.html?index=0';
+        a.click();
+    }
+};
+// 8、 点击我的订单进入我的订单
+document.querySelector('.myDeals').onclick = function() {
+    // 如果没有登录了
+    var loginBtn = document.querySelector('.login-btn');
+    if (loginBtn) {
+        ylAlert('您还未登录，请您先登录...');
+        loginBtn.click();
+    } else {
+        var a = document.createElement('a');
+        a.href = './personalCenter.html?index=1';
         a.click();
     }
 };

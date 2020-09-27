@@ -24,14 +24,17 @@ function switchLogin() {
     var exitBtn = document.createElement('span');
     exitBtn.className = 'exitBtn click';
     exitBtn.innerText = '退出';
+    document.querySelector('.registerBtn').style.display = 'none';
     var user = document.querySelector('.yl-username');
     insertAfter(exitBtn, user);
+    // 登录成功，不显示注册
     exitBtn.onclick = function() {
         window.localStorage.setItem('token', '');
         window.localStorage.setItem('username', '');
         user.innerText = '登录';
         user.style.color = '#666';
         user.className = 'click login-btn';
+        document.querySelector('.registerBtn').style.display = 'inline-block';
         this.style.display = 'none';
         loginHandler();
     };

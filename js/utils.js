@@ -15,13 +15,16 @@ function getParam(url) {
     if (typeof url !== 'string') {
         return new Error('function need a String type param');
     }
-
+    if (url.indexOf('?') === -1) {
+        return param;
+    }
     url.split('?')[1]
         .split('&').forEach(item => {
             param[item.split('=')[0]] = item.split('=')[1];
         });
     return param;
 }
+
 /**
  * content 表示弹出内容
  * during 表示持续时间
@@ -40,6 +43,35 @@ function ylAlert(content, during) {
     setTimeout(() => {
         alertBox.className = 'alertBox';
     }, (during + 0.5) * 1000);
+}
+
+/**
+ * content 表示弹出内容
+ * during 表示持续时间
+ * @param {*} content
+ * @param {*} yesFn 点是的函数
+ * @param {* } noFn 点否的函数
+ * @returns
+ */
+function ylConfirm(content, yesFn, noFn) {
+    var yesBtn = document.querySelector('.yes-btn');
+    var noBtn = document.querySelector('.no-btn');
+    var confirmBoxInfo = document.querySelector('.confirmBox>.info');
+    confirmBoxInfo.innerText = String(content);
+    confirmBoxInfo.parentNode.className = 'confirmBox active';
+    yesBtn.onclick = function() {
+        document.querySelector('.confirmBox').classList.remove('active');
+        if (typeof yesFn === 'function') {
+            yesFn();
+        }
+    };
+    noBtn.onclick = function() {
+        document.querySelector('.confirmBox').classList.remove('active');
+        if (typeof yesFn === 'function') {
+            noFn();
+        }
+    };
+
 }
 
 /**
