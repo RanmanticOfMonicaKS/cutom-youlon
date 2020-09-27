@@ -11,7 +11,6 @@
  * @returns
  */
 function getParam(url) {
-    console.log(url, '---->url');
     let param = {};
     if (typeof url !== 'string') {
         return new Error('function need a String type param');
@@ -60,27 +59,41 @@ function insertAfter(newElement, targetElement) {
 }
 /**
  * tab栏切换通用元素
- * selector css选择器
+ * selector 父容器css选择器
  * handler 后续需要进行的逻辑操作
  * @param {*} selector
  * @param {*} handler
  */
 function tabSwitch(selector, handler) {
-
-    var target = document.querySelector(selector);
-    if (!target) throw new Error('No such a dom,plz review');
-    // 为目标添加active类名，并移遍历移除除掉兄弟节点带有active的类名
-    var siblings = target.parentNode.children;
-    for (var ele in siblings) {
-        if (ele.classList.contains('active')) {
-            ele.classList.remove('active');
+    var parent = document.querySelector(selector);
+    parent.addEventListener('click', function(e) {
+        var index = 0; // 位于navBar中的位置
+        var target = e.target;
+        if (!target) throw new Error('No such a dom,plz review');
+        // 为目标添加active类名，并移遍历移除除掉兄弟节点带有active的类名
+        var siblings = parent.children;
+        for (var i = 0; i < siblings.length; i++) {
+            var ele = siblings[i];
+            ele.index = i;
+            if (ele.classList.contains('active')) {
+                ele.classList.remove('active');
+            }
         }
-    }
-    target.classList.add('active');
-    // eslint-disable-next-line no-constant-condition
-    if (typeof handler === 'function') {
+        // 有嵌套多层时 如 ul > li > a
+        if (target.tagName !== parent.children[0].tagName) {
+            target.parentNode.classList.add('active');
+            index = target.parentNode.index;
+        } else {
+            target.classList.add('active');
+            index = target.index;
+        }
+        // if (parent.children[0].)
 
-        handler();
-    }
+        //  后续处理函数 传入target
+        if (typeof handler === 'function') {
+
+            handler(index);
+        }
+    }, false);
 
 }

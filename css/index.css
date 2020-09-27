@@ -16,12 +16,18 @@
     color: #ff6642;
 }
 
+
+
 /* 顶部欢迎条 */
 .welcomeBar {
     height: 30px;
     background-color: #f5f5f5;
     line-height: 29px;
     border-bottom: 1px solid #e7e7e7;
+}
+
+.welcomeBar span.username {
+    color: #ff6642;
 }
 
 .welcomeTitle,
@@ -223,15 +229,32 @@
     display: block;
     height: 100%;
     line-height: 40px;
+    background-color: transparent;
 }
 
-.navBar li>a.active {
+.navBar li.active {
     background-color: #E9512E;
 }
 
-.navBar li>a.first {
+.navBar li.first {
 
     border-left: none;
+}
+
+/* breadcrumbs 面包屑 默认隐藏 */
+.breadcrumbs {
+    display: none;
+    height: 40px;
+    line-height: 40px;
+    background-color: #F3F3F3;
+    font-size: 12px;
+}
+
+.breadcrumbs,
+.breadcrumbs>span,
+.breadcrumbs>span>a {
+    color: #666;
+
 }
 
 /* 模拟分割线 */

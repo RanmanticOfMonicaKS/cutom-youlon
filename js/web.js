@@ -42,3 +42,28 @@ document.addEventListener('keydown', function(e) {
         document.querySelector('.login').style.display = 'none';
     }
 }, false);
+
+// 4、 导航栏颜色样式变化
+tabSwitch('.navBar >.heart', function(index) {
+    console.log(index);
+    controlBreadCrumbs();
+});
+console.dir(document.querySelector('.test'));
+
+// 5、 面包屑首页时，不显示，其他时候显示，以免后台不方便操作, 第四步已经上了序列。
+function controlBreadCrumbs() {
+    if (
+        // 点击了除首页外的其他菜单项，显示面包屑
+        !document.querySelector('.navBar > .heart > li').classList.contains('active')
+
+    ) {
+        document.querySelector('.breadcrumbs').style.display = 'block';
+    } else {
+        document.querySelector('.breadcrumbs').style.display = 'none';
+
+    }
+}
+// 6、个人中心页面一进来就显示面包屑
+if (document.querySelector('.web').classList.contains('personalCenter')) {
+    document.querySelector('.breadcrumbs').style.display = 'block';
+}

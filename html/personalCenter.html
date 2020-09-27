@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- 首页 -->
+<!-- 个人中心页 -->
 
 <head>
     <meta charset="UTF-8">
@@ -29,7 +29,7 @@
 
 <body style="height: 100%;">
     <div class="alertBox"></div>
-    <div class="web index clearfix" style="height:100%;">
+    <div class="web personalCenter clearfix" style="height:100%;">
         <header class="topMenu">
             <!-- 头部欢迎条 -->
             <div class="welcomeBar " @click="$alert.methods.success({content:'函数式',during:3})">
@@ -48,8 +48,10 @@
                             <div class="fa fa-mobile"></div>
                             APP
                         </span>
-                        <span class="click login-btn">登录 </span>
-                        <span class="registerBtn click">注册 </span>
+                        <!-- <span class="click login-btn">登录 </span> -->
+                        <!-- <span class="registerBtn click">注册 </span> -->
+                        <span class="click username">tomhanks</span>
+                        <span class="click myDeals">我的订单</span>
                         <span class="click personalCenter">个人中心</span>
                         <select name="" id="moneyChoose">
                             <option value="American" label="美元"></option>
@@ -176,137 +178,25 @@
             <div class="breadcrumbs heart">
                 <span>当前位置：</span>
                 <span><a href="#">首页 &nbsp;&nbsp;> </a> </span>
-                <span><a href="#">手游 &nbsp;&nbsp;> </a> </span>
-                <span><a href="#">王者荣耀-安卓版</a></span>
+                <span><a href="#">个人中心 &nbsp;&nbsp;> </a> </span>
+                <span><a href="#">个人主页</a></span>
             </div>
         </header>
         <!-- 主体部分 -->
         <main class="heart yl-main clearfix">
             <!-- 左侧列表 -->
             <div class="main-left col-lg-8 fl">
-                <section class="hotRefill">
-                    <div class="title">
-                        <h1>
-                            <i class="fa fa-fire"></i>
-                            <span>热门充值</span>
-                        </h1>
-                    </div>
-                    <div class="content">
-                        <ul class="hotRefill flex-hw flex-h">
-                            <li class="hotRefill-item   flex-vc">
-                                <img src="../img/appStore-pay.png" alt="">
-                                <h5>苹果账号appStore</h5>
-                                <p><span class="yuan">50元</span>
-                                    <span class="dollar">美元8.9</span></p>
-                                <button class="yl-button">购买</button>
-                            </li>
-                            <li class="hotRefill-item  flex-vc">
-                                <img src="../img/appStore-pay.png" alt="">
-                                <h5>苹果账号appStore</h5>
-                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
-                                <button class="yl-button">购买</button>
-                            </li>
-                            <li class="hotRefill-item  flex-vc">
-                                <img src="../img/appStore-pay.png" alt="">
-                                <h5>苹果账号appStore</h5>
-                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
-                                <button class="yl-button">购买</button>
-                            </li>
-                            <li class="hotRefill-item  flex-vc">
-                                <img src="../img/appStore-pay.png" alt="">
-                                <h5>苹果账号appStore</h5>
-                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
-                                <button class="yl-button">购买</button>
-                            </li>
-                            <li class="hotRefill-item  flex-vc">
-                                <img src="../img/appStore-pay.png" alt="">
-                                <h5>苹果账号appStore</h5>
-                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
-                                <button class="yl-button">购买</button>
-                            </li>
-                            <li class="hotRefill-item  flex-vc">
-                                <img src="../img/appStore-pay.png" alt="">
-                                <h5>苹果账号appStore</h5>
-                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
-                                <button class="yl-button">购买</button>
-                            </li>
-                            <li class="hotRefill-item  flex-vc">
-                                <img src="../img/appStore-pay.png" alt="">
-                                <h5>苹果账号appStore</h5>
-                                <p><span class="yuan">50元</span>
-                                    <span class="dollar">美元8.9</span></p>
-                                <button class="yl-button">购买</button>
-                            </li>
-                            <li class="hotRefill-item  flexv">
-                                <img src="../img/appStore-pay.png" alt="">
-                                <h5>苹果账号appStore</h5>
-                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
-                                <button class="yl-button">购买</button>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-                <section class="newRecommend">
-                    <h1>
-                        <i class="fa fa-star-o"></i>
-                        <span>新品推荐</span>
-                    </h1>
-                    <div class="content">
-                        <ul class="newRecommend flex-hw flex-h">
-                            <li class="newRecommend-item   flex-vc">
-                                <img src="../img/appStore-pay.png" alt="">
-                                <h5>苹果账号appStore</h5>
-                                <p><span class="yuan">50元</span>
-                                    <span class="dollar">美元8.9</span></p>
-                                <button class="yl-button">购买</button>
-                            </li>
-                            <li class="newRecommend-item  flex-vc">
-                                <img src="../img/appStore-pay.png" alt="">
-                                <h5>苹果账号appStore</h5>
-                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
-                                <button class="yl-button">购买</button>
-                            </li>
-                            <li class="newRecommend-item  flex-vc">
-                                <img src="../img/appStore-pay.png" alt="">
-                                <h5>苹果账号appStore</h5>
-                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
-                                <button class="yl-button">购买</button>
-                            </li>
-                            <li class="newRecommend-item  flex-vc">
-                                <img src="../img/appStore-pay.png" alt="">
-                                <h5>苹果账号appStore</h5>
-                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
-                                <button class="yl-button">购买</button>
-                            </li>
-                            <li class="newRecommend-item  flex-vc">
-                                <img src="../img/appStore-pay.png" alt="">
-                                <h5>苹果账号appStore</h5>
-                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
-                                <button class="yl-button">购买</button>
-                            </li>
-                            <li class="newRecommend-item  flex-vc">
-                                <img src="../img/appStore-pay.png" alt="">
-                                <h5>苹果账号appStore</h5>
-                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
-                                <button class="yl-button">购买</button>
-                            </li>
-                            <li class="newRecommend-item  flex-vc">
-                                <img src="../img/appStore-pay.png" alt="">
-                                <h5>苹果账号appStore</h5>
-                                <p><span class="yuan">50元</span>
-                                    <span class="dollar">美元8.9</span></p>
-                                <button class="yl-button">购买</button>
-                            </li>
-                            <li class="newRecommend-item  flexv">
-                                <img src="../img/appStore-pay.png" alt="">
-                                <h5>苹果账号appStore</h5>
-                                <p><span class="yuan">50元</span> <span class="dollar">美元8.9</span></p>
-                                <button class="yl-button">购买</button>
-                            </li>
-                        </ul>
-                    </div>
-
-                </section>
+                <ul class="personalCenter-menu">
+                    <li class="personalCenter-menu-item active">
+                        <img src="../img/shop-icon3.png" alt="用户"><span>个人主页</span>
+                    </li>
+                    <li class="personalCenter-menu-item">
+                        <img src="../img/shop-icon3.png" alt="订单"><span>我的订单</span>
+                    </li>
+                    <li class="personalCenter-menu-item">
+                        <img src="../img/shop-icon3.png" alt="余额"><span>账户余额</span>
+                    </li>
+                </ul>
             </div>
             <!-- 右侧公告和支付方式 -->
             <div class="main-right col-lg-4 fr show-lg-block hide-sm">
@@ -314,59 +204,23 @@
                     <div class="title">
                         <h1>
                             <img src="../img/pay-h2.png" alt="支付方式">
-                            <span>支付方式</span>
+                            <span>我的资料</span>
                         </h1>
                     </div>
                     <div class="content">
-                        <img src="../img/pay-icon1.png" alt="">
-                        <img src="../img/pay-icon1.png" alt="">
-                        <img src="../img/pay-icon1.png" alt="">
-                        <img src="../img/pay-icon1.png" alt="">
                     </div>
                 </section>
                 <section class="latestBulletin">
                     <div class="title">
                         <h1>
-                            <span class="active">
-                                <i class="fa fa-bullhorn"></i>
-                                <span>最新公告</span>
-                            </span>
-                            <span>
-                                <i class="fa fa-bullhorn"></i>
-                                <span>海外助手</span></span>
+                            <img src="../img/pay-h2.png" alt="支付方式">
+                            <span>我的足迹</span>
                         </h1>
                     </div>
                     <div class="content">
-                        <p class="news"><i>&lt;</i>LOL：翻十几倍！S9决赛门票遭遇黄牛</p>
-                        <p class="news"><i>&lt;</i>LOL：翻十几倍！S9决赛门票遭遇黄牛</p>
-                        <p class="news"><i>&lt;</i>LOL：翻十几倍！S9决赛门票遭遇黄牛</p>
-                        <p class="news"><i>&lt;</i>LOL：翻十几倍！S9决赛门票遭遇黄牛</p>
-                        <p class="news"><i>&lt;</i>LOL：翻十几倍！S9决赛门票遭遇黄牛</p>
                     </div>
                 </section>
-                <section class="shopping-process">
-                    <!-- 购物流程 -->
-                    <div class="title">
-                        <h1>
-                            <i class="fa fa-fire"></i>
-                            <span>购物流程</span>
-                        </h1>
-                    </div>
-                    <div class="content">
-                        <div class="step">
-                            <div class="icon icon1"><img src="../img/shop-icon1.png"></img></div>
-                            <div class="text">01 下订单，填账号</div>
-                        </div>
-                        <div class="step">
-                            <div class="icon icon2"><img src="../img/shop-icon2.png"></img></div>
-                            <div class="text">02 确认订单，付款</div>
-                        </div>
-                        <div class="step">
-                            <div class="icon icon3"><img src="../img/shop-icon3.png"></img></div>
-                            <div class="text">03 充值到账，短信通知</div>
-                        </div>
-                    </div>
-                </section>
+
 
             </div>
 
